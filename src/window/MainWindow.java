@@ -9,19 +9,21 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 
+import my_util.GetWeather;
+
 public class MainWindow extends JFrame{
-	private JLabel mJLabel_date;
 	private JList<String> mJList_weather;
 	private JButton mJButton_show;
+	private JLabel mJLabel_time;
 
 	public MainWindow() {
 		super("Weatherforecast");
 		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		super.setSize(700, 700);
 
-		// データ取得時刻を表示するラベル
-		mJLabel_date = new JLabel("");
-		super.getContentPane().add(mJLabel_date, BorderLayout.NORTH);
+		// データ取得時刻を表示する
+		mJLabel_time = new JLabel("");
+		super.getContentPane().add(mJLabel_time, BorderLayout.NORTH);
 
 		// 取得したデータを表示するリスト
 		mJList_weather = new JList<>();
@@ -37,8 +39,11 @@ public class MainWindow extends JFrame{
 	class GetInformation implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent event) {
-			if (event.getSource() == mJButton_show)
-				getWeather();
+			if (event.getSource() == mJButton_show) {
+				GetWeather myWeather = GetWeather.getInstance();
+				mJList_weather.setListData(myWeather.getWeathercastList());
+				mJLabel_time.setText(myWeather.getGetDate());
+			}
 		}
 	}
 }

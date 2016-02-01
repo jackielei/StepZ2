@@ -6,15 +6,15 @@ public class ForecastDay {
 	/**
 	 * 予報取得時間
 	 */
-	private String mDate;
+	private String date;
 
-	private List<WeatherContent> mForecastday;  // forecast配列
+	private List<WeatherContent> forecastday;  // forecast配列
 
 	//------------------
 	// setter
 	//------------------
-	public void setDate(String date) { mDate = date; }
-	public void setForecastday(List<WeatherContent> forecast) { mForecastday = forecast; }
+	public void setDate(String date) { this.date = date; }
+	public void setForecastday(List<WeatherContent> forecastday) { this.forecastday = forecastday; }
 
 	//------------------
 	// getter
@@ -23,10 +23,10 @@ public class ForecastDay {
 	 * 予報取得時間を取得する
 	 * @return 取得時間
 	 */
-	public String getDate() { return mDate; }
+	public String getDate() { return date; }
 	/**
 	 * forecastday structureを返す
 	 * @return forecastday structure
 	 */
-	public List<WeatherContent> getForecastday() { return mForecastday; }
+	public List<WeatherContent> getForecastday() { return this.forecastday; }
 }
