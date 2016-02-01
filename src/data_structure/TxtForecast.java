@@ -11,5 +11,5 @@ public class TxtForecast {
 	//------------------
 	// getter
 	//------------------
-	public ForecastDay getTxt_forecast(ForecastDay txt_forecast) { return mTxt_forecast; }
+	public ForecastDay getTxt_forecast() { return mTxt_forecast; }
 }
